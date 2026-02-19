@@ -97,13 +97,15 @@ class Region {
 class City {
   int? id;
   String? name;
+  String? nameEn;
   int? stateId;
 
-  City({this.id, this.name, this.stateId});
+  City({this.id, this.name, this.nameEn, this.stateId});
 
   City.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
+    nameEn = json['name_en'];
     stateId = json['state_id'];
   }
 
@@ -111,6 +113,7 @@ class City {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['name'] = name;
+    data['name_en'] = nameEn;
     data['state_id'] = stateId;
     return data;
   }
